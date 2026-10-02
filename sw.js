@@ -1,4 +1,4 @@
-const CACHE_NAME = 'kedryn-static-v1';
+const CACHE_NAME = 'kedryn-static-v2';
 const APP_SHELL = [
   './', './index.html', './manifest.webmanifest', './css/style.css',
   './js/app.js', './js/store.js', './js/ui.js',
