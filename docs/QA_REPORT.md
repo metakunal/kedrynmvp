@@ -31,3 +31,5 @@ The user-supplied color reference was sampled for seven exact UI colors. A scan 
 A later tracker screenshot showed seven-day date labels merging and bars collapsed to the baseline. The trend now renders two wide charts with fixed-height bars, two-line day labels, daily numeric values, and the existing accessible table. Node render inspection found two panels, 14 bars and 14 day labels; the eight automated tests passed. Fresh browser visual capture remains unverified.
 
 A supplied header screenshot showed the customer dropdown expanding the burgundy masthead. Its links now sit in an absolutely positioned desktop panel; the mobile panel stays in normal flow. Structural checks confirmed both layouts and the eight automated tests passed. Browser visual verification remains unavailable.
+
+The visual tokens were updated from the user-provided violet/lime reference. Runtime CSS and SVG colors were scanned for stale burgundy/cream values. Contrast calculations: action violet on warm ivory 7.97:1, near-black on lime 12.9:1. The eight automated tests passed after the update; browser visual capture remains unavailable.

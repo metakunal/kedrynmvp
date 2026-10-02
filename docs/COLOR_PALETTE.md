@@ -1,15 +1,17 @@
-# Color palette from the supplied reference
+# KEDRYN violet and lime palette
 
-Sampled directly from the user-provided `image.png` screenshot on 2026-10-02. The screenshot includes a video overlay, so sampling was limited to the KEDRYN interface areas. These exact sampled RGB values now drive the application's CSS tokens and locally generated SVG assets.
+Updated from the user-provided food-site screenshot on 2026-10-02. This is an adaptation of the reference's color rhythm, not a copy of its branding or page layout. The reference image is not bundled in the application.
 
-| Use | Hex | Reference area |
+| Role | Value | Source or treatment |
 |---|---|---|
-| Primary burgundy | `#542336` | Top masthead and selected dinner tab |
-| Page cream | `#FDF8F2` | Main page background |
-| Surface cream | `#FFFAF4` | Card and input surfaces |
-| Warm sand | `#F9EFE3` | Editorial notice band |
-| Soft gold | `#F1DBC6` | Wordmark highlight |
-| Muted plum | `#6A5053` | Secondary navigation text |
-| Hairline | `#E1D4CE` | Menu divider |
+| Action violet | `#5427D2` | Sampled from the reference navigation and wordmark color |
+| Lime highlight | `#E2F27F` | Sampled from the reference hero background |
+| Warm ivory | `#FDFFEC` | Sampled from the reference page background |
+| Near-black text | `#232323` | Sampled from the reference hero lettering |
+| Deep violet | `#4020A9` | Darker hover companion to action violet |
+| Soft lime surface | `#F4F8DC` | Quiet companion to the lime highlight |
+| White card surface | `#FFFFFF` | Keeps dense product information easy to scan |
+| Muted text | `#4C4C45` | Neutral secondary copy color |
+| Border | `#CDD4AF` | Soft green-gray boundary for cards and fields |
 
-Burgundy on page cream has an approximately 11.9:1 contrast ratio; muted plum on page cream is above 6:1. Focus rings use burgundy. Error and success messages include text and structural cues, not only color.
+Primary violet on warm ivory is approximately 7.97:1 contrast; near-black on lime is approximately 12.9:1. The strong colors lead in the masthead strip, hero, buttons, charts and selected states. Dense catalog, checkout, diary and partner content stays on light surfaces.
