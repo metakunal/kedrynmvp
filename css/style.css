@@ -50,3 +50,7 @@
 /* User-supplied Rajma photo replaces the abstract plate in the landing hero only. */
 .hero-art{overflow:hidden;position:relative}.hero-photo{position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);display:block;width:min(52%,270px);height:auto;aspect-ratio:1;object-fit:cover;object-position:center 46%;border:7px solid var(--cream);border-radius:50%;box-shadow:0 8px 28px #5427D255}.hero-art .hero-photo[hidden]{display:none}
 @media(max-width:700px){.hero-photo{width:min(60%,210px);border-width:5px}}
+
+/* Align the serviceability action to the PIN input, below its label. */
+.pin-check-row{align-items:flex-end}.pin-check-row .field{width:min(100%,280px)}.pin-check-row input,.pin-check-row button{height:48px}.pin-check-row button{flex:0 0 auto}
+@media(max-width:520px){.pin-check-row{display:grid;grid-template-columns:1fr;align-items:stretch}.pin-check-row .field{width:100%}.pin-check-row button{width:100%}}
