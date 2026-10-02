@@ -26,3 +26,7 @@ document.body.addEventListener('click',async e=>{if(!e.target.closest('dialog'))
 app.addEventListener('submit',e=>{e.preventDefault();if(e.target.id==='checkout-form')orders.submitCheckout(render,announce);if(e.target.id==='preferences-form')support.savePreferences(announce)});
 app.addEventListener('change',async e=>{const el=e.target,name=el.name,value=el.value;if(name==='photo-upload'){tracker.fileChange(el.files[0],render,announce,openDialog);return}landing.change(name,value,render);mealsPage.change(name,value,render);orders.change(name,value,el,render);planner.change(name,value,el,render);tracker.change(name,value,render);partner.change(name,value);support.change(name,value,render)});
 routeChange();
+
+if ('serviceWorker' in navigator && (location.protocol === 'https:' || location.hostname === 'localhost' || location.hostname === '127.0.0.1')) {
+  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(error => console.warn('KEDRYN offline support could not be enabled:', error)));
+}

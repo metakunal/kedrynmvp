@@ -12,6 +12,13 @@ python3 -m http.server 8080
 
 Open `http://localhost:8080`. No build step, account, API key or network service is needed after local files load. The app uses HTML, CSS custom properties and vanilla JavaScript ES modules with hash routes.
 
+## Progressive web app
+
+KEDRYN can be installed from a supported browser when served from `localhost` or an HTTPS origin. On desktop, use the browser's install control; on iOS/iPadOS, use **Share → Add to Home Screen**. The web app manifest and burgundy KEDRYN icons provide the installed appearance. A service worker pre-caches the local app shell and bundled assets so the demo can reopen offline after its first successful load. Hash routes continue to work offline.
+
+PWA data remains on the current device/browser in localStorage. Installing on another device does not sync it. This demo has no push notifications, background sync, remote ordering, or account service. When a new app version is published, close and reopen the app to activate the updated cached shell.
+
+
 ## Demo paths
 
 Start at `#/` or use **Explore as customer** and **Explore as gym partner**. The primary customer path is `#/planner` → `#/cart` → `#/checkout` → `#/orders/:id` → `#/tracker`. The partner path is `#/partner` → referrals, payouts and assets. The complete five-minute route is in [docs/DEMO_SCRIPT.md](docs/DEMO_SCRIPT.md).
