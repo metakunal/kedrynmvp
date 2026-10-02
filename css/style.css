@@ -10,3 +10,8 @@
 @media(min-width:1201px){.customer-menu[open]{position:relative}.customer-menu[open] a{white-space:nowrap}.customer-menu[open]::after{content:"";position:absolute;inset:44px 0 auto;z-index:-1;background:var(--surface)}}
 @media(max-width:1050px){.catalog-layout{grid-template-columns:240px minmax(0,1fr)}.catalog-layout .grid.three{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:700px){.catalog-layout{grid-template-columns:1fr}.catalog-layout .grid.three{grid-template-columns:1fr}}
+
+/* Diary layout: controls and five nutrition values stay readable at every width. */
+.tracker-intro{max-width:960px}.tracker-intro h1{font-size:clamp(40px,4.2vw,56px)}.tracker-actions{align-items:stretch}.tracker-actions button{min-height:48px}.selected-day-panel .nutrition-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.selected-day-panel .nutrition-grid div{min-width:0}.selected-day-panel .nutrition-grid div:last-child{grid-column:1/-1}.selected-day-panel h2{font-size:clamp(28px,2.5vw,36px)}.selected-day-panel .nutrition-grid strong{font-size:22px}
+@media(max-width:700px){.tracker-actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:20px 0}.tracker-actions button{width:100%;padding:10px}.tracker-layout .selected-day-panel{order:-1}.selected-day-panel .nutrition-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.selected-day-panel .nutrition-grid div:last-child{grid-column:auto}}
+@media(max-width:390px){.tracker-actions{grid-template-columns:1fr}.selected-day-panel .nutrition-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}

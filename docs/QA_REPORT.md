@@ -19,3 +19,7 @@
 | Live kedryn.com inspection | Unverified | Prior stakeholder research reports access blocked; no independent live-site inspection here |
 
 The app was not deployed. Browser checks remain a release gate before a client presentation, especially mobile checkout, photo review, partner card layout and dialog focus behavior.
+
+## Screenshot-driven layout fixes
+
+A supplied tracker screenshot showed the five selected-day nutrition values overflowing the narrow right panel and an unstyled upload control. The tracker now uses a two-column metric grid in that panel, a consistent four-action toolbar, and a bundled-sample picker. The HTML route renders and the eight automated tests still pass. A fresh browser screenshot remains unverified in this environment.
