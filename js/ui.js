@@ -1,0 +1,15 @@
+import {meals,available} from './data/catalog.js';
+import {getState,save} from './store.js';
+import {rupees,nutritionText} from './domain/math.js';
+import {DATES,dateLabel} from './domain/dates.js';
+export const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+export const field=(label,name,value,type='text',extra='')=>`<label class="field">${esc(label)}<input name="${esc(name)}" type="${type}" value="${esc(value)}" ${extra}></label>`;
+export const button=(label,action,extra='')=>`<button type="button" data-action="${action}" ${extra}>${label}</button>`;
+export const dateSelect=(name,value)=>`<select name="${name}">${DATES.map(d=>`<option value="${d}" ${d===value?'selected':''}>${dateLabel(d)}</option>`).join('')}</select>`;
+export const slotSelect=(name,value,meal)=>`<select name="${name}">${(meal?.mealWindows||['breakfast','lunch','snacks','dinner']).map(w=>`<option value="${w}" ${w===value?'selected':''}>${w[0].toUpperCase()+w.slice(1)}</option>`).join('')}</select>`;
+export const image=(m)=>`<div class="meal-art" role="img" aria-label="Photo coming soon for ${esc(m.name)}"><span class="art-mark">✦</span><small>PHOTO COMING SOON</small><strong>${esc(m.name)}</strong></div>`;
+export function mealCard(m,{date=DATES[0],slot=m.mealWindows[0]}={}){const s=getState(),can=available(m,date,slot);return `<article class="meal-card">${image(m)}<div class="meal-card-body"><div class="card-top"><small>${esc(m.mealWindows.join(' · '))} · ${m.standardServingGrams}g</small><button class="icon-button" data-action="favourite" data-id="${m.id}" aria-label="${s.favourites.includes(m.id)?'Remove':'Add'} ${esc(m.name)} ${s.favourites.includes(m.id)?'from':'to'} favourites" aria-pressed="${s.favourites.includes(m.id)}">${s.favourites.includes(m.id)?'♥':'♡'}</button></div><h3><a href="#/meals/${m.id}">${esc(m.name)}</a></h3><p>${esc(m.description)}</p><p class="meta">${nutritionText(m.nutritionPerStandard)} estimate</p><div class="card-bottom"><strong>${rupees(m.basePricePaise)}</strong><button data-action="quick-add" data-id="${m.id}" data-date="${date}" data-slot="${slot}" ${can?'':'disabled'}>${can?'Add meal':'Unavailable'}</button></div>${can?'':'<small>M15 is unavailable in the demo schedule; M18 is unavailable for dinner on 4 Oct.</small>'}</div></article>`}
+export function nutrition(n){return `<div class="nutrition-grid">${[['kcal','Calories','kcal'],['p','Protein','g'],['c','Carbs','g'],['f','Fat','g'],['fi','Fibre','g']].map(([k,label,u])=>`<div><strong>${Number((n[k]||0).toFixed(1))}</strong><small>${label} ${u}</small></div>`).join('')}</div>`}
+export function empty(title,body,link,label){return `<div class="empty"><h2>${esc(title)}</h2><p>${esc(body)}</p>${link?`<a class="button" href="${link}">${esc(label)}</a>`:''}</div>`}
+export function alert(message,type='info'){return `<div class="notice ${type}" role="status">${esc(message)}</div>`}
+export function toggleFav(id){save(s=>{s.favourites=s.favourites.includes(id)?s.favourites.filter(x=>x!==id):[...s.favourites,id]})}
