@@ -31,3 +31,10 @@
 /* Catalog count belongs to the results column, not beside the search field. */
 .catalog-search-row{align-items:end}.catalog-search-row .field{width:min(100%,560px)}.catalog-search-row input{width:100%}.catalog-results{min-width:0}.catalog-results-head{display:flex;align-items:center;justify-content:space-between;min-height:44px;margin-bottom:12px}.catalog-count{margin:0;font-size:15px;font-weight:700;color:var(--muted)}
 @media(max-width:700px){.catalog-search-row{display:grid;grid-template-columns:1fr auto;align-items:end}.catalog-search-row .field{width:100%}.catalog-results-head{margin-top:6px}}
+
+/* The customer dropdown overlays desktop content instead of sizing the masthead. */
+.customer-menu{flex:0 0 auto;align-self:center;position:relative}.customer-menu[open]{background:transparent;box-shadow:none}.customer-menu[open]::after{display:none}.customer-menu-panel{position:absolute;top:calc(100% + 8px);left:0;z-index:30;min-width:210px;padding:6px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:0 12px 28px #54233622}.customer-menu-panel a{display:block;color:var(--plum);white-space:nowrap;border:0!important;border-radius:7px}.customer-menu-panel a:hover,.customer-menu-panel a:focus-visible{background:var(--sand)}.site-header .customer-menu[open]>summary{color:var(--cream)}
+@media(max-width:1200px){.customer-menu{align-self:stretch}.customer-menu-panel{position:static;min-width:0;width:100%;box-shadow:none;background:var(--sand);margin:2px 0 8px}.site-header .customer-menu[open]>summary{color:var(--plum)}}
+/* Keep the dropdown trigger readable while the panel is open. */
+.site-header .customer-menu,.site-header .customer-menu[open]{background:transparent;box-shadow:none}.site-header .customer-menu>summary,.site-header .customer-menu[open]>summary{color:var(--cream);background:transparent;border:0;border-radius:0;padding:0 4px;white-space:nowrap}.site-header .customer-menu-panel{background:var(--surface)}
+@media(max-width:1200px){.site-header .customer-menu>summary,.site-header .customer-menu[open]>summary{color:var(--plum)}}
