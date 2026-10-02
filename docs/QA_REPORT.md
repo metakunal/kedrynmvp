@@ -23,3 +23,5 @@ The app was not deployed. Browser checks remain a release gate before a client p
 ## Screenshot-driven layout fixes
 
 A supplied tracker screenshot showed the five selected-day nutrition values overflowing the narrow right panel and an unstyled upload control. The tracker now uses a two-column metric grid in that panel, a consistent four-action toolbar, and a bundled-sample picker. The HTML route renders and the eight automated tests still pass. A fresh browser screenshot remains unverified in this environment.
+
+A supplied partner screenshot showed three balance cards sitting in a four-column grid and chart bars collapsed to baseline lines. The balance section now uses three columns. The chart renders dated bar heights and values from the filtered commercial rows, including a zero-value cancelled day, and includes a daily data table. Node render inspection found seven bars with the expected ₹498 and ₹518 values; fresh browser visual capture remains unverified.
