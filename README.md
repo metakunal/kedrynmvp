@@ -28,6 +28,8 @@ Mock services use deterministic local delays and return `{ok, data, warnings}` o
 
 Bundled sample-photo choices use predetermined catalog estimates. Arbitrary JPEG, PNG and WebP uploads up to 10MB receive an editable generic sample, never image recognition. Image bytes and object URLs are not stored, transmitted or used for inference; object URLs are released when the review closes or resets. The food diary changes only on explicit confirmation.
 
+The visual colors are sampled from the user-provided reference; exact hex values and their source regions are in [docs/COLOR_PALETTE.md](docs/COLOR_PALETTE.md).
+
 ## Structure
 
 - `js/data/`: shared catalog and seed fixtures.
